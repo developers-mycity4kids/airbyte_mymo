@@ -1,0 +1,170 @@
+
+version: 2
+
+models:
+  - name: campaign_participants
+    description: "MyMo campaign participants details"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: is_deleted
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: updated_at
+      - name: campaign_id
+        tests:
+          - relationships:
+              to: ref('campaigns')
+              field: id
+      - name: user_id
+        tests:
+          - relationships:
+              to: ref('users')
+              field: id
+      - name: participants_status
+      - name: payment_status
+      - name: final_payout
+      - name: payment_mode_id
+      - name: payment_meta
+      - name: feedback
+      - name: reimbursement
+      - name: action_required
+      - name: payment_creation_time
+      - name: payment_creation_time
+      - name: campaign_amount
+      - name: falcon_transaction_info
+      - name: falcon_transaction_id
+
+  - name: campaigns
+    description: "campaigns details table"
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: is_deleted
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: updated_at
+      - name: is_active
+      - name: brand_id
+      - name: po_number
+      - name: name
+      - name: name_slug
+      - name: start_time
+      - name: end_time
+      - name: description
+      - name: is_fixed_amount
+      - name: amount
+      - name: min_amount
+      - name: max_amount
+      - name: approval_status
+      - name: approved_by
+      - name: approved_time
+      - name: image_url
+      - name: max_slots
+      - name: terms
+      - name: read_this
+      - name: moderation_required
+      - name: total_payout
+      - name: proof_instructions
+      - name: auto_rejection_days
+      - name: auto_rejection_hours
+      - name: reimbursement
+      - name: campaign_type
+      - name: last_sync_time
+      - name: campaign_tags
+      - name: live_date
+      - name: brand_product_id
+      - name: unique_hashtags
+
+  - name: deliverable_details
+    description: "deliverable_details table"
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: is_deleted
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: updated_at
+      - name: deliverable_type
+      - name: brief
+      - name: read_this
+      - name: photo_instructions
+      - name: caption
+      - name: tags
+      - name: hash_tags
+      - name: other_rules
+      - name: terms
+      - name: example
+      - name: campaign_id
+        tests:
+          - relationships:
+              to: ref('campaigns')
+              field: id
+      - name: product_purchase_link
+      - name: product_review_link
+      - name: survey_link
+      - name: campaign_link
+      - name: proof_allowed
+      - name: proof_required
+      - name: task_detail_id
+        tests:
+          - relationships:
+              to: ref('task_details')
+              field: id
+      - name: sort_order
+      - name: description
+      - name: to_timestamp(start_date) as start_date
+      - name: to_timestamp(end_date) as end_date
+      - name: auto_rejection_days
+      - name: auto_rejection_hours
+      - name: step_instructions_media
+      - name: script_instructions
+      - name: meta_info
+      - name: buy_now_link
+
+  - name: task_details
+    description: "MyMo task details table"
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: is_deleted
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: updated_at
+      - name: campaign_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('campaigns')
+              field: id
+      - name: name
+        tests:
+          - not_null
+      - name: status
+      - name: start_date
+      - name: end_date
+      - name: deliverable_type
+      - name: sort_order
+      - name: enabled
+      
