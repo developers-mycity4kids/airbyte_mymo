@@ -36,7 +36,7 @@ models:
       - name: reimbursement
       - name: action_required
       - name: payment_creation_time
-      - name: payment_creation_time
+      - name: payment_completion_time
       - name: campaign_amount
       - name: falcon_transaction_info
       - name: falcon_transaction_id
