@@ -167,4 +167,37 @@ models:
       - name: deliverable_type
       - name: sort_order
       - name: enabled
+  
+  - name: users
+    description: "MyMo users table"
+    columns: 
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: is_deleted
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: updated_at
+      - name: public_id
+      - name: first_name
+      - name: last_name
+      - name: email
+      - name: contact
+      - name: gender
+      - name: dob
+      - name: location
+      - name: latitude
+      - name: longitude
+      - name: is_email_verified
+      - name: state_name
+      - name: city
+      - name: is_card_created
+      - name: can_create_card
+      - name: minimum_kyc_status
+      - name: user_code
+      - name: referred_by
       
