@@ -10,4 +10,4 @@
 {{ config(materialized='table') }}
 
 SELECT id, is_deleted, created_at, updated_at, campaign_id, name, status, to_timestamp(start_date) as start_date, to_timestamp(end_date) as end_date, deliverable_type, sort_order, enabled
-FROM public.mymo_campaign-user_task_details
+FROM public.mymo_campaign_user_task_details

@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: mymo_campaign-user_campaign_participants
+  - name: mymo_campaign_user_campaign_participants
     description: "MyMo campaign participants details"
     columns:
       - name: id
@@ -41,7 +41,7 @@ models:
       - name: falcon_transaction_info
       - name: falcon_transaction_id
 
-  - name: mymo_campaign-user_campaigns
+  - name: mymo_campaign_user_campaigns
     description: "campaigns details table"
     columns:
       - name: id
@@ -87,7 +87,7 @@ models:
       - name: brand_product_id
       - name: unique_hashtags
 
-  - name: mymo_campaign-user_deliverable_details
+  - name: mymo_campaign_user_deliverable_details
     description: "deliverable_details table"
     columns:
       - name: id
@@ -138,7 +138,7 @@ models:
       - name: meta_info
       - name: buy_now_link
 
-  - name: mymo_campaign-user_task_details
+  - name: mymo_campaign_user_task_details
     description: "MyMo task details table"
     columns:
       - name: id
@@ -168,7 +168,7 @@ models:
       - name: sort_order
       - name: enabled
   
-  - name: mymo_campaign-user_users
+  - name: mymo_campaign_user_users
     description: "MyMo users table"
     columns: 
       - name: id
